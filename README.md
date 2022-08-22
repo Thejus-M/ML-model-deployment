@@ -2,4 +2,4 @@
 
 
 
-Hosted in [heroku](https://github.com/lyndsherb/pacman-loader.git)
+Hosted in [heroku](https://know-the-rate.herokuapp.com/prediction)
