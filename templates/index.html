@@ -6,117 +6,143 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/index.css">
-    <title>LR Model in Flask</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <title>KnowtheRate</title>
 </head>
 
 <body>
-    <form action="{{url_for('prediction')}}" method="post">
-        <br>
-        <input type="text" name="area" placeholder="Enter the area">
-        <br><br>
+    <div class="output">
+        <h3>{{prediction_text}}</h3>
+    </div>
 
-        <label for="bedrooms">Choose no. of bedrooms:</label>
-        <select name="bedrooms" id="bedrooms">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-        </select>
 
-        <br><br>
+    <div class="testbox">
+        <form action="{{url_for('prediction')}}" method="post">
+            <div class="banner">
+                <h1>Know the Rate</h1>
+            </div>
+            <br />
+            <p>Know the Rate is a website based on Machine Learning to find the Rate
+                of your house before buying.
+            </p>
+            <br />
+            <div class="colums">
+                <div class="item">
+                    <label for="name">Area of plot<span>*</span></label>
+                    <input id="name" type="number" name="area" required />
+                </div>
 
-        <label for="bathrooms">Choose no. of bathrooms:</label>
-        <select name="bathrooms" id="bedrooms">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-        </select>
+            </div>
+            <div class="colums">
+                <div class="item">
+                    <label for="bedrooms">Choose no. of bedrooms:</label>
+                    <select name="bedrooms" id="bedrooms">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
 
-        <br><br>
+                <div class="item">
+                    <label for="bathrooms">Choose no. of bathrooms:</label>
+                    <select name="bathrooms" id="bedrooms">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
 
-        <label for="stories">Choose no. of stories:</label>
-        <select name="stories" id="stories">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-        </select>
-        
-        <br><br>
-        
-        <label for="mainroad">Need a main road:</label>
-        <select name="mainroad" id="mainroad">
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-        </select>
+                <div class="item">
+                    <label for="stories">Choose no. of stories:</label>
+                    <select name="stories" id="stories">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
 
-        <br><br>
-        
-        <label for="guestroom">Need a guestroom:</label>
-        <select name="guestroom" id="guestroom">
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-        </select>
+                <div class="item">
+                    <label for="mainroad">Need a main road:</label>
+                    <select name="mainroad" id="mainroad">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
 
-        <br><br>
-        
-        <label for="basement">Need a basement:</label>
-        <select name="basement" id="basement">
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-        </select>
+                <div class="item">
+                    <label for="guestroom">Need a guestroom:</label>
+                    <select name="guestroom" id="guestroom">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
 
-        <br><br>
-        
-        <label for="hotwaterheating">Need a hot water heater:</label>
-        <select name="hotwaterheating" id="hotwaterheating">
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-        </select>
+                <div class="item">
+                    <label for="basement">Need a basement:</label>
+                    <select name="basement" id="basement">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
 
-        <br><br>
-        
-        <label for="airconditioning">Need a air conditioning:</label>
-        <select name="airconditioning" id="airconditioning">
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-        </select>
+                <div class="item">
+                    <label for="hotwaterheating">Need a hot water heater:</label>
+                    <select name="hotwaterheating" id="hotwaterheating">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
 
-        <br><br>
+                <div class="item">
+                    <label for="airconditioning">Need a air conditioning:</label>
+                    <select name="airconditioning" id="airconditioning">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
 
-        <label for="parking">Choose no. of parking spots:</label>
-        <select name="parking" id="parking">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-        </select>
-        
-        <br><br>
-        
-        <label for="prefarea">Need a prefarea:</label>
-        <select name="prefarea" id="prefarea">
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-        </select>
+                <div class="item">
+                    <label for="parking">Choose no. of parking spots:</label>
+                    <select name="parking" id="parking">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
 
-        <br><br>
-        
-        <label for="furnishingstatus">Need a furnishingstatus:</label>
-        <select name="furnishingstatus" id="furnishingstatus">
-            <option value="furnished">furnished</option>
-            <option value="semi-furnished">semi-furnished</option>
-            <option value="unfurnished">unfurnished</option>
-        </select>
+                <div class="item">
+                    <label for="prefarea">Need a prefarea: </label>
+                    <select name="prefarea" id="prefarea">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
 
-        <br><br>
-        <button type="submit">Submit</button>
-    </form>
-    <br>
-    <h3>{{prediction_text}}</h3>
+
+                <div class="item">
+                    <label for="furnishingstatus">Need a furnishingstatus:</label>
+                    <select name="furnishingstatus" id="furnishingstatus">
+                        <option value="furnished">furnished</option>
+                        <option value="semi-furnished">semi-furnished</option>
+                        <option value="unfurnished">unfurnished</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="btn-block">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
 </body>
 
 </html>
