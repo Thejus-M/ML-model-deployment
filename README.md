@@ -2,4 +2,4 @@
 
 
 
-Hosted in [heroku](https://know-the-rate.herokuapp.com/prediction)
+Hosted in [heroku](https://knowtherate.herokuapp.com/)
